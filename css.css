@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0a4d3c 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.container::before {
+    content: 'RICK AND MORTY';
+    display: block;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #97ce4c;
+    text-shadow: 
+        3px 3px 0 #00b5cc,
+        6px 6px 0 #1a1a2e,
+        -2px -2px 0 #00b5cc;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            3px 3px 0 #00b5cc,
+            6px 6px 0 #1a1a2e,
+            -2px -2px 0 #00b5cc,
+            0 0 10px #97ce4c;
+    }
+    to {
+        text-shadow: 
+            3px 3px 0 #00b5cc,
+            6px 6px 0 #1a1a2e,
+            -2px -2px 0 #00b5cc,
+            0 0 30px #97ce4c,
+            0 0 40px #97ce4c;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: linear-gradient(145deg, #1e3a5f, #0f2744);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 
+        0 10px 30px rgba(0, 181, 204, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #00b5cc;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(151, 206, 76, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(151, 206, 76, 0.4),
+        0 0 30px rgba(0, 181, 204, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: #97ce4c;
+}
+
+.card h2 {
+    color: #97ce4c;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.card p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 8px 12px;
+    background: rgba(0, 181, 204, 0.2);
+    border-radius: 8px;
+    border-left: 3px solid #00b5cc;
+}
+
+.card p:last-of-type {
+    border-left-color: #97ce4c;
+    background: rgba(151, 206, 76, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 3px solid #00b5cc;
+    box-shadow: 0 5px 20px rgba(0, 181, 204, 0.4);
+    transition: all 0.3s ease;
+}
+
+.card:hover img {
+    border-color: #97ce4c;
+    box-shadow: 0 8px 25px rgba(151, 206, 76, 0.5);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .container::before {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .card p {
+        font-size: 1rem;
+    }
+}
+button{
+    width: 100%;
+    border: none;
+    background-color: chartreuse;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+
+
+}
+button:hover{
+    background-color: rgb(11, 29, 234);
+    cursor: pointer;
+    box-shadow: 1px 0 15px black;
+    color: white;
+    text-shadow: 1px 0 15px black;
+    
+}
