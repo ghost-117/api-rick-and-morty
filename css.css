@@ -11,6 +11,42 @@ body {
     padding: 20px;
 }
 
+/* Buscador */
+.search-container {
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #00b5cc;
+    border-radius: 15px;
+    background: rgba(30, 58, 95, 0.8);
+    color: #e0e0e0;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-container input::placeholder {
+    color: #97ce4c;
+}
+
+.search-container input:focus {
+    border-color: #97ce4c;
+    box-shadow: 0 0 20px rgba(151, 206, 76, 0.3);
+}
+
+.search-container button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    width: auto;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -140,6 +176,46 @@ body {
     transform: scale(1.05);
 }
 
+button {
+    width: 100%;
+    border: none;
+    background-color: chartreuse;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: rgb(11, 29, 234);
+    cursor: pointer;
+    box-shadow: 1px 0 15px black;
+    color: white;
+    text-shadow: 1px 0 15px black;
+}
+
+.invisible {
+    display: none;
+}
+
+.details .card img {
+    text-align: center;
+    justify-content: center;
+    height: auto;
+}
+
+/* Mensaje de no resultados */
+.no-results {
+    text-align: center;
+    color: #97ce4c;
+    font-size: 1.5rem;
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(151, 206, 76, 0.1);
+    border-radius: 15px;
+    border: 2px solid #97ce4c;
+}
+
 @media (max-width: 768px) {
     .container::before {
         font-size: 2rem;
@@ -153,31 +229,12 @@ body {
     .card p {
         font-size: 1rem;
     }
-}
-button{
-    width: 100%;
-    border: none;
-    background-color: chartreuse;
-    font-weight: bold;
-    border-radius: 15px;
-    padding: 10px;
-    text-align: center;
-
-
-}
-button:hover{
-    background-color: rgb(11, 29, 234);
-    cursor: pointer;
-    box-shadow: 1px 0 15px black;
-    color: white;
-    text-shadow: 1px 0 15px black;
     
-}
-.invisible{
-display: none;
-}
-.details .card img {
-    text-align: center;
-    justify-content: center;
-    height: auto;
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .search-container button {
+        width: 100%;
+    }
 }
